@@ -127,7 +127,7 @@ const archives = [
 const social = ["GitHub", "Twitter", "Facebook"];
 
 function Blog(props) {
-  const { classes } = props;
+  const { classes, switch: switchView } = props;
 
   return (
     <React.Fragment>
@@ -147,8 +147,8 @@ function Blog(props) {
           <IconButton>
             <SearchIcon />
           </IconButton>
-          <Button variant="outlined" size="small">
-            Sign up
+          <Button variant="outlined" size="small" onClick={() => switchView()}>
+            Log out
           </Button>
         </Toolbar>
         <Toolbar variant="dense" className={classes.toolbarSecondary}>
@@ -285,7 +285,8 @@ function Blog(props) {
 }
 
 Blog.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  switch: PropTypes.func.isRequired
 };
 
 export default withStyles(styles)(Blog);

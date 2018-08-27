@@ -55,7 +55,7 @@ class SignIn extends React.Component {
     e.preventDefault();
     const email = this.email.value;
     const password = this.password.value;
-    console.log(email);
+    this.props.switch();
   }
 
   render() {
@@ -70,7 +70,7 @@ class SignIn extends React.Component {
               <LockIcon />
             </Avatar>
             <Typography variant="headline">Sign in</Typography>
-            <form className={classes.form} onSubmit={this._signIn}>
+            <form name="login" className={classes.form} onSubmit={this._signIn}>
               <FormControl margin="normal" required fullWidth>
                 <InputLabel htmlFor="email">Email Address</InputLabel>
                 <Input
@@ -109,7 +109,8 @@ class SignIn extends React.Component {
 }
 
 SignIn.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  switch: PropTypes.func.isRequired
 };
 
 export default withStyles(styles)(SignIn);
