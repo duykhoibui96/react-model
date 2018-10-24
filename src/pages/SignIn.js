@@ -51,11 +51,11 @@ class SignIn extends React.Component {
     this._signIn = this._signIn.bind(this);
   }
 
-  _signIn(e) {
+  _signIn = (e) => {
     e.preventDefault();
     const email = this.email.value;
     const password = this.password.value;
-    this.props.switch();
+    this.props.history.push('/home');
   }
 
   render() {

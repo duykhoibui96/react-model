@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -147,9 +148,7 @@ function Blog(props) {
           <IconButton>
             <SearchIcon />
           </IconButton>
-          <Button variant="outlined" size="small" onClick={() => switchView()}>
-            Log out
-          </Button>
+          <Link to="/login">Log out</Link>
         </Toolbar>
         <Toolbar variant="dense" className={classes.toolbarSecondary}>
           {sections.map(section => (
